@@ -6,13 +6,14 @@ export default function HTML(props) {
     <html {...props.htmlAttributes}>
       <head>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178887366-1"></script>
-                <script>
-                  window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-178887366-1');
-        </script>
+        <script
+          dangerouslySetInnerHTML={{__html : `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-178887366-1');
+          `}}
+        />
 
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
